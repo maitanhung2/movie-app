@@ -3,5 +3,5 @@ const app = express();
 const port = 8080;
 
 app.listen(port, () => {
-    console.log("BE server running is " + $port)
+    console.log(`BE server running is  ${port} `)
 })
