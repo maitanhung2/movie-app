@@ -1,5 +1,5 @@
-// const request = require("supertest");
-// const app = require("../app");
+const request = require("supertest");
+const app = require("../../index");
 
 // Mock axios, else you will really request the endpoint
 // jest.mock("axios");
@@ -48,3 +48,11 @@ describe(" Post /api/auth/login", () => {
     });
   });
 });
+
+// describe("GET / ", () => {
+//   test("It should respond with an array of students", async () => {
+//     const response = await request(app).get("/");
+//     expect(response.body).toEqual(["Elie", "Matt", "Joel", "Michael"]);
+//     expect(response.statusCode).toBe(200);
+//   });
+// });
