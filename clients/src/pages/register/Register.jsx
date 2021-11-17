@@ -22,8 +22,12 @@ export default function Register() {
     e.preventDefault();
     setPassword(passwordRef.current.value);
     setUsername(usernameRef.current.value);
+    const formData = new FormData
+    formData.append('email', emailRef)
+    formData.append('username', usernameRef)
+    formData.append('password', passwordRef)
     try {
-      await axios.post("auth/register", { email, username, password });
+      await axios.post("http://localhost:8080/api/auth/register", formData);
       history.push("/login");
     } catch (err) {}
   };
@@ -54,7 +58,7 @@ export default function Register() {
             </button>
           </div>
         ) : (
-          <form className="input">
+          <form className="input" onSubmit={handleFinish}>
             <input type="username" placeholder="username" ref={usernameRef} />
             <input type="password" placeholder="password" ref={passwordRef} />
             <button className="registerButton" onClick={handleFinish}>
