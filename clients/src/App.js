@@ -13,8 +13,9 @@ import {
 import { useContext } from "react";
 import { AuthContext } from "./authContext/AuthContext";
 
-function App() {
+const App = () => {
   const { user } = useContext(AuthContext);
+  // const user = true;
   return (
     <Router>
       <Switch>
@@ -41,6 +42,6 @@ function App() {
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;
